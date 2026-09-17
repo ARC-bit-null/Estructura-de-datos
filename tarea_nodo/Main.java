@@ -12,7 +12,7 @@ public class Main {
 
         // 2. Estado inicial completo
         System.out.println("\n[1] Estado inicial completo:");
-        System.out.println(head);
+        imprimirLista(head);
 
         // 3. Dato del primer nodo
         System.out.println("\n[2] Dato del primer nodo:");
@@ -24,7 +24,7 @@ public class Main {
             ultimo = ultimo.getSiguiente();
         }
         System.out.println("\n[3] Estado completo del último nodo:");
-        System.out.println(ultimo);
+        System.out.println(ultimo.getDato());
 
         // 5. Inserta "Fe" entre "De" y "Mc"
         Nodo<String> actual = head;
@@ -38,7 +38,7 @@ public class Main {
 
         // 6. Imprime estado tras insertar "Fe"
         System.out.println("\n[4] Estado tras insertar 'Fe' entre 'De' y 'Mc':");
-        System.out.println(head);
+        imprimirLista(head);
 
         // 7. Inserta "Zz" al final
         Nodo<String> ultimoParaZz = head;
@@ -49,14 +49,24 @@ public class Main {
 
         // 8. Imprime estado tras insertar "Zz"
         System.out.println("\n[5] Estado tras insertar 'Zz' al final:");
-        System.out.println(head);
+        imprimirLista(head);
 
-        // 9. Inserta "Aa" al inicio
+        //9.- inserta al "Aa" al inicio de todo
         Nodo<String> nuevoAa = new Nodo<>("Aa", head);
         head = nuevoAa;
 
-        // 10. Estado final
-        System.out.println("\n[6] Estado final tras insertar 'Aa' al inicio:");
-        System.out.println(head);
+        //10.- Estado dinal
+        System.out.println("\n[6] Estado final del nodo");
+        imprimirLista(head);
+        }
+
+    // Método auxiliar para imprimir solo los datos conectados
+    public static void imprimirLista(Nodo<String> inicio) {
+        Nodo<String> actual = inicio;
+        while (actual != null) {
+            System.out.print(actual.getDato() + (actual.getSiguiente() != null ? " -> " : ""));
+            actual = actual.getSiguiente();
+        }
+        System.out.println();
     }
 }
