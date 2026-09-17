@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("=== LISTA ENLAZADA CON NODO<T> ===");
 
-        // 1. Construcción manual de la lista: Al -> B -> C -> De -> Mc -> Zi
+        // 1. Construcción de la lista: Al -> B -> C -> De -> Mc -> Zi
         Nodo<String> head = new Nodo<>("Al");
         head.setSiguiente(new Nodo<>("B"));
         head.getSiguiente().setSiguiente(new Nodo<>("C"));
@@ -26,7 +26,7 @@ public class Main {
         System.out.println("\n[3] Estado completo del último nodo:");
         System.out.println(ultimo.getDato());
 
-        // 5. Inserta "Fe" entre "De" y "Mc"
+        // 5. Insertamos "Fe" entre "De" y "Mc"
         Nodo<String> actual = head;
         while (actual != null && !actual.getDato().equals("De")) {
             actual = actual.getSiguiente();
@@ -36,22 +36,22 @@ public class Main {
             actual.setSiguiente(nuevoFe);
         }
 
-        // 6. Imprime estado tras insertar "Fe"
+        // 6. Imprimo estado tras insertar "Fe"
         System.out.println("\n[4] Estado tras insertar 'Fe' entre 'De' y 'Mc':");
         imprimirLista(head);
 
-        // 7. Inserta "Zz" al final
+        // 7. Inserto "Zz" al final
         Nodo<String> ultimoParaZz = head;
         while (ultimoParaZz.getSiguiente() != null) {
             ultimoParaZz = ultimoParaZz.getSiguiente();
         }
         ultimoParaZz.setSiguiente(new Nodo<>("Zz"));
 
-        // 8. Imprime estado tras insertar "Zz"
+        // 8. Imprimimos estado tras insertar "Zz"
         System.out.println("\n[5] Estado tras insertar 'Zz' al final:");
         imprimirLista(head);
 
-        //9.- inserta al "Aa" al inicio de todo
+        //9.- insertar al "Aa" al inicio de todo
         Nodo<String> nuevoAa = new Nodo<>("Aa", head);
         head = nuevoAa;
 
